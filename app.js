@@ -1,24 +1,30 @@
 const express = require('express');
 const hbs = require('handlebars'); 
 
+const date = require('./date/date');
+
 var app = new express(); 
 
 const port = process.env.PORT || 3000; 
 
 app.set('view engine', hbs); 
 
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', (req, res) => {
-    res.render(__dirname + '/public/views/index.hbs');
+    res.render(__dirname + '/public/index.hbs');
 });
 
-app.get('/date', (req, res) => {
-    var dateSent = req.query.date; 
-var timestamp = parseInt((new Date(dateSent).getTime()) / 1000); 
-    res.render(__dirname + '/public/views/index.hbs', {
-        date: dateSent, 
-        timestamp: timestamp
+app.get('/submit', (req, res) => {
+    console.log('App.js input ', req.query.input);
+    console.log(typeof req.query.input);
+    var input = req.query.input; 
+    var output = date.convertDate(input); 
+    console.log('App.js output ', output);
+ 
+    res.render(__dirname + '/public/index.hbs', {
+        output: output
     });
-    console.log(req.query.date);
     
 });
 
