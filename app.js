@@ -23,7 +23,8 @@ app.get('/submit', (req, res) => {
     console.log('App.js output ', output);
  
     res.render(__dirname + '/public/index.hbs', {
-        output: output
+        fullDateString: output.fullDateString, 
+        timestampString: output.timestampString
     });
     
 });
