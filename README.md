@@ -1,8 +1,7 @@
 This Timestamp Microservice is built in Node with Express 4.14.0. The view engine is Handlebars 4.0.1. Testing was carried out with Mocha and Expect. Version control is Git, and the app is hosted on Heroku. 
 
 Project Link:
-https://blooming-harbor-86478.herokuapp.com/submit?input=6%2F6%2F2001 
-
+https://blooming-harbor-86478.herokuapp.com/
 
 Project Specs:
 
