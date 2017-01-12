@@ -4,13 +4,13 @@ function convert (rawInput) {
     var inputDateObject = new Date(rawInput); 
 
     if (inputDateObject == 'Invalid Date') {
-        console.log('Not a valid date. Process as a timestamp.');
+        // console.log('Not a valid date. Process as a timestamp.');
 
         var numberInput = Number(rawInput); 
-        console.log(numberInput, typeof numberInput);
+        // console.log(numberInput, typeof numberInput);
 
         if (isNaN(numberInput)) {
-            return {ts: null, ds: null}; 
+            return {ts: `Timestamp: ${null}`, ds: `Date: ${null}`}; 
         } else {
             var milliseconds = Math.round(numberInput * 1000); 
             var dateString = new Date(milliseconds).toDateString(); 
@@ -18,14 +18,14 @@ function convert (rawInput) {
             return {
             ts: `Timestamp: ${rawInput}`, 
             ds: `Date: ${dateString}`
-        }
+            }
         }
     } else {
-        console.log('Process as date object'); 
+        // console.log('Process as date object'); 
         
         var timestamp = new Date(rawInput).getTime() / 1000; 
         var dateString = new Date(rawInput).toDateString(); 
-        console.log(timestamp, dateString); 
+        // console.log(timestamp, dateString); 
 
         return {
             ts: `Timestamp: ${timestamp}`, 
@@ -35,5 +35,5 @@ function convert (rawInput) {
 
 } //convert
 
-result = convert('dfg'); 
-console.log(result);
+module.exports.convert = convert; 
+

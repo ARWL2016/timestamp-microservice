@@ -19,12 +19,12 @@ app.get('/submit', (req, res) => {
     console.log('App.js input ', req.query.input);
     console.log(typeof req.query.input);
     var input = req.query.input; 
-    var output = date.convertDate(input); 
+    var output = date.convert(input); 
     console.log('App.js output ', output);
  
     res.render(__dirname + '/public/index.hbs', {
-        fullDateString: output.fullDateString, 
-        timestampString: output.timestampString
+        date: output.ds, 
+        timestamp: output.ts
     });
     
 });

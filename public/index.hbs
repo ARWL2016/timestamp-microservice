@@ -6,15 +6,19 @@
     <link rel="stylesheet" type="text/css" href= "./index.css" >
 </head>
 <body>
-    <h1>Timestamp Microservice</h1>
-    <p>Enter a unix timestamp or a date in the format 30/12/2001 or 30 December 2001. Click submit to convert.</p>
+    <div>
+        <h1>Timestamp Microservice</h1>
+        <p>Unix time is standard for measuring time used in many operating systems. It is defined as a number of seconds since <time>Thursday 1 January, 1970</time>.</p> 
+        <p>Enter a unix timestamp or a date in the format 'December 30 2001'.</p>
+        
 
-    <form id="form" action="/submit" method="GET">
-        <input type="text" name="input" id="input" placeholder=" Enter a date or unix timestamp"> 
-        <input type="submit" id="submit"> 
-    </form>
+        <form id="form" action="/submit" method="GET">
+            <input type="text" name="input" id="input" placeholder="Enter a date or unix timestamp"> 
+            <input type="submit" id="submit" value="Convert"> 
+        </form>
 
-    <p>{{fullDateString}}</p>
-    <p>{{timestampString}}</p>
+        <p>{{date}}</p>
+        <p>{{timestamp}}</p>
+    </div>
 </body>
 </html>
