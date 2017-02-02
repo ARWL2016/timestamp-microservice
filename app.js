@@ -3,7 +3,7 @@ const hbs = require('handlebars');
 
 const date = require('./date/date');
 
-var app = new express(); 
+var app = express(); 
 
 const port = process.env.PORT || 3000; 
 
